@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ajouter une voiture</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+    <h1>ajouter une voiture</h1>
+
+    <form th:action="@{/addCar}" th:object="${carForm}" method="POST">
+        Marque:
+        <input type="text" th:field="*{marque}" />
+        <br />
+        Modele :
+        <input type="text" th:field="*{modele}" />
+        <br />
+        <input type="submit" value="Ajouter" />
+    </form>
+
+    <div th:if="${errorMessage}" th:utext="${errorMessage}" style="color: rebeccapurple;font-style: italic;">
+        Error 733
+
+    </div>
+</body>
+</html>

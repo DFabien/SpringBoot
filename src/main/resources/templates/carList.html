@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <h1>Nos Voitures</h1>
+
+    <a href="addCar">Ajouter une voiture</a>
+    <br /><br />
+
+    <div>
+        <table>
+            <tr>
+                <th>Marque</th>
+                <th>Modele</th>
+
+            </tr>
+            <tr th:each="voiture:${voitures}">
+                <td th:utext="${voiture.marque}">Marque</td>
+                <td th:utext="${voiture.modele}">Modele</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
